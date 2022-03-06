@@ -1,0 +1,159 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  background-color: #bbe8e5;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+  border: 0.1em solid #60c6da;
+  border-radius: 25px;
+  font-style: italic;
+  color: #2b6fec;
+  font-family: sans-serif;
+}
+.current-weather {
+  padding-top: 20px;
+}
+h2 {
+  color: rgb(143, 36, 214);
+  border: 0.1em solid #ade4e0;
+  border-radius: 25px;
+  background-color: #bbe8e5;
+  text-align: right;
+  width: 100%;
+  padding-top: 20px;
+  padding-right: 20px;
+  margin-top: 30px;
+  max-width: 600px;
+}
+hr {
+  margin: 1vh;
+}
+.cloudy-sun {
+  font-size: 16vmax;
+  font-size-adjust: inherit;
+  margin-bottom: 10px;
+  opacity: 0.8;
+  color: rgb(233, 190, 110);
+}
+.current-weather-conditions {
+  text-align: center;
+  background-color: #60c6da;
+  color: #bbf7f3;
+  font-style: italic;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+
+  border-radius: 50%;
+  padding: 80px 40px;
+}
+.container {
+  position: relative;
+  background: #d8f1f5;
+  margin: 50px auto;
+  border: 0.5rem solid #60c6da;
+  border-radius: 12px;
+  padding: 1.5em;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.app-box {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 30px;
+}
+.search-engine {
+  margin: 0 auto 30px;
+  margin-left: 0;
+}
+.enter-city {
+  background-color: #b4e1ef;
+  border: 1px solid #42a5f5;
+  border-radius: 25px;
+  text-align: center;
+}
+#celsius,
+#fahrenheit {
+  text-decoration: none;
+}
+
+#search-city {
+  background-color: #42a5f5;
+  border-radius: 25px;
+  transition: all 200ms ease-in-out;
+  border: none;
+  margin: 10px;
+}
+#search-city:hover {
+  background-color: #3a94dd;
+  color: #ade4e0;
+}
+#current-location {
+  background-color: #42a5f5;
+  border-radius: 25px;
+  transition: all 200ms ease-in-out;
+  border: none;
+  margin: 10px;
+}
+#current-location:hover {
+  background-color: #3a94dd;
+  color: #ade4e0;
+}
+.temperature-change {
+  text-align: right;
+}
+.change-celsius-fahrenheit {
+  font-size: 30px;
+  font-style: italic;
+  color: #255fca;
+}
+
+.phrase {
+  right: 10px;
+}
+.motivational-phrase {
+  background-color: #add7eb;
+  font-style: italic;
+  color: #1d4ba1;
+  border-radius: 25px;
+  padding: 18px;
+  margin-top: 30px;
+  text-align: center;
+  line-height: 40px;
+  max-width: 400px;
+}
+
+.weather-stats {
+  font-style: italic;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  background-color: #ade4e0;
+  border-radius: 25px;
+  list-style: none;
+  line-height: 50px;
+  margin: 10px;
+}
+
+.next-weather {
+  background-color: #dbf8ff;
+  text-align: center;
+  border-radius: 25px;
+  margin: 15px;
+  padding: 15px;
+}
+
+.emoji {
+  font-size: 35px;
+}
+footer {
+  font-size: 12px;
+  display: block;
+  text-align: center;
+  font-family: monospace;
+}
