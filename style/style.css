@@ -147,7 +147,9 @@ hr {
   margin: 15px;
   padding: 15px;
 }
-
+#open-source {
+  text-decoration-line: none;
+}
 .emoji {
   font-size: 35px;
 }
