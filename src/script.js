@@ -43,66 +43,23 @@ let date = now.getDate();
 currentTime.innerHTML = `${day}, ${month} ${date} </br> ${year} </br> 
 ${hours}:${minutes}`;
 
+// integration of real data JS-API
+function displayTemperature(response) {
+  let temperatureElement = document.querySelector("#actual-temperature");
+  let cityElement = document.querySelector("#city");
+  let descriptionElement = document.querySelector("#description-weather");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  cityElement.innerHTML = response.data.name;
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  humidityElement.innerHTML = response.data.main.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+}
+
 // API variables
 
 let apiKey = "7cf24a2441259043e3f7ca4927b8b80f";
-let endPoint = "https://api.openweathermap.org/data/2.5/weather";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=San Francisco&appid=${apiKey}&units=metric`;
 
-// search the city
-
-function showSearchTemperature(response) {
-  let temperature = Math.round(response.data.main.temp);
-  let updatedTemperature = document.querySelector("#actual-temperature");
-  updatedTemperature.innerHTML = `${temperature}°C`;
-  console.log(response);
-}
-
-function citySearch(event) {
-  event.preventDefault();
-  let cityInput = document.querySelector("#search-text-input");
-  cityInput = cityInput.value.trim();
-  let units = "metric";
-  let apiUrl = `${endPoint}?q=${cityInput}&appid=${apiKey}&units=${units}`;
-
-  let searchCityName = document.querySelector("#city-title");
-
-  if (cityInput) {
-    searchCityName.innerHTML = `${cityInput}`;
-  } else {
-    searchCityName.innerHTML = "Somewhere in the world...";
-    alert(`Sorry, please enter a city.`);
-  }
-  axios.get(apiUrl).then(showSearchTemperature);
-}
-
-let userCitySearch = document.querySelector("#search-form");
-userCitySearch.addEventListener("submit", citySearch);
-
-// current location
-
-function showTemperature(response) {
-  let temperature = Math.round(response.data.main.temp);
-  let updatedTemperature = document.querySelector("#actual-temperature");
-  updatedTemperature.innerHTML = `${temperature}°C`;
-  // console.log(response);
-  let currentCity = response.data.name;
-  let currentCityName = document.querySelector("#city-title");
-  currentCityName.innerHTML = `${currentCity}`;
-}
-
-function getPosition(position) {
-  let latitude = position.coords.latitude;
-  let longitude = position.coords.longitude;
-  let units = "metric";
-  let apiUrl = `${endPoint}?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
-
-  axios.get(apiUrl).then(showTemperature);
-}
-
-function currentCityButton(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(getPosition);
-}
-
-let currentCityInfo = document.querySelector("#current-location");
-currentCityInfo.addEventListener("click", currentCityButton);
+axios.get(apiUrl).then(displayTemperature);
