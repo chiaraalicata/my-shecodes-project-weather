@@ -79,6 +79,7 @@ hr {
   border-radius: 25px;
   text-align: center;
 }
+
 #celsius,
 #fahrenheit {
   text-decoration: none;
@@ -107,6 +108,10 @@ hr {
 }
 .temperature-change {
   text-align: right;
+}
+.temperature-change .active {
+  color: rgb(12, 72, 161);
+  cursor: default;
 }
 .change-celsius-fahrenheit {
   font-size: 30px;
