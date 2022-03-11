@@ -18,18 +18,25 @@
   <body>
     <div class="container">
       <div class="app-box">
-        <form class="search-engine" id="search-form">
-          <input
-            type="type"
+        <form id="search-form" class="mb-5">
+          <div class="row">
+           <div class="col-9">
+            <input
+            type="search"
             class="enter-city"
-            autofocus="on"
             placeholder="Search City..."
             autocomplete="off"
-            id="search-text-input"
-          />
-
-          <button id="search-city">Search</button>
-          <button id="current-location">Current Location</button>
+            id="city-input"
+            />
+           </div>
+            <div class="col-3">
+             <input 
+             type ="submit" 
+             value= "Search"
+             class= "btn btn-primary w-100"
+             id="search-city">
+            </div>
+        </div>
         </form>
         <div class="row">
           <div class="col-8">

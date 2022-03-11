@@ -72,10 +72,7 @@ hr {
   padding: 10px 30px;
   max-width: 700px;
 }
-.search-engine {
-  margin: 0 auto 30px;
-  margin-left: 0;
-}
+
 .enter-city {
   background-color: #b4e1ef;
   border: 1px solid #42a5f5;
@@ -92,7 +89,6 @@ hr {
   border-radius: 25px;
   transition: all 200ms ease-in-out;
   border: none;
-  margin: 10px;
 }
 #search-city:hover {
   background-color: #3a94dd;
