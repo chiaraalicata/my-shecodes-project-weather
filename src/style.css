@@ -37,12 +37,11 @@ h2 {
 hr {
   margin: 1vh;
 }
-.cloudy-sun {
-  font-size: 12vmax;
+#icon {
+  font-size: 20vmax;
   font-size-adjust: inherit;
   margin-bottom: 10px;
   opacity: 0.8;
-  color: rgb(235, 171, 53);
 }
 .current-time-and-day {
   text-align: center;
