@@ -83,7 +83,24 @@ function displayForecast(response) {
 }
 
 // integration of real data API
-
+function changeFunnyPhrase(phrase) {
+  if (
+    phrase === "clear" &&
+    phrase === "few clouds" &&
+    phrase === "scattered clouds"
+  ) {
+    return "Today is the perfect day to take a walk outside 🌻";
+  }
+  if (phrase === "broken clouds" && phrase === "drizzle" && phrase === "Rain") {
+    return "It's time for 💃🏽 in the 🌧, but don't forget your ☂️";
+  }
+  if (phrase === "thunderstorm") {
+    return "Maybe it's better to stay 🏠. Read a 📖 and enjoy a cup of hot 🍵";
+  }
+  if (phrase === "snow") {
+    return "Do you want to built a ☃️?";
+  }
+}
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#actual-temperature");
   let cityElement = document.querySelector("#city");
@@ -92,7 +109,10 @@ function displayTemperature(response) {
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let iconElement = document.querySelector("#icon");
-
+  let changePhrase = document.querySelector("#funny-phrase");
+  changePhrase.innerHTML = changeFunnyPhrase(
+    response.data.weather[0].description
+  );
   celsiusTemperature = response.data.main.temp;
   getFeelsLike = response.data.main.feels_like;
 
@@ -162,28 +182,6 @@ let currentButton = document.querySelector("#current-location");
 currentButton.addEventListener("click", clickCurrent);
 
 // change the funny phrase based on the weather
-
-function changeFunnyPhrase(phrase) {
-  if (
-    phrase === "Clear" &&
-    phrase === "Few clouds" &&
-    phrase === "Scattered clouds"
-  ) {
-    return "Today is the perfect day to take a walk outside 🌻";
-  }
-  if (phrase === "Broken clouds" && phrase === "Drizzle" && phrase === "Rain") {
-    return "It's time for 💃🏽 in the 🌧, but don't forget your ☂️";
-  }
-  if (phrase === "Thunderstorm") {
-    return "Maybe it's better to stay 🏠. Read a 📖 and enjoy a cup of hot 🍵";
-  }
-  if (phrase === "Snow") {
-    return "Do you want to built a ☃️?";
-  }
-  phrase = response.data.weather[0].description;
-  let changePhrase = document.querySelector("#funny-phrase");
-  changePhrase.innerHTML = phrase;
-}
 
 // default city on the app
 

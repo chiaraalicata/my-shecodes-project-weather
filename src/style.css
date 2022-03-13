@@ -97,13 +97,13 @@ hr {
   background-color: #3a94dd;
   color: #ade4e0;
 }
+
 #current-location {
   color: white;
   background-color: #42a5f5;
   border-radius: 25px;
   transition: all 200ms ease-in-out;
   border: none;
-  margin: 10px;
 }
 #description-weather::first-letter {
   text-transform: capitalize;
@@ -169,7 +169,5 @@ hr {
 }
 footer {
   font-size: 12px;
-  display: block;
-  text-align: center;
   font-family: monospace;
 }
