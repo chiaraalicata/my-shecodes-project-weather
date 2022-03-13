@@ -20,6 +20,7 @@ let days = [
   "Friday",
   "Saturday",
 ];
+
 let day = days[now.getDay()];
 
 let months = [
@@ -43,6 +44,27 @@ let date = now.getDate();
 currentTime.innerHTML = `${day}, ${month} ${date} </br> ${year} </br> 
 ${hours}:${minutes}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#weather-forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let daysShort = ["Tue", "Wed", "Thu", "Fri"];
+  daysShort.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `     <div class="col-2 next-weather">
+            ${day} <br />
+            <hr />
+            <span class="emoji">🌫</span>
+            <hr />
+            <span class="max-temperature">
+            17° </span>
+            <span class="min-temperature">11°</span> <br />
+          </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 // integration of real data JS-API
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#actual-temperature");
@@ -107,3 +129,5 @@ let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("San Francisco");
+
+displayForecast();

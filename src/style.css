@@ -2,7 +2,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 700px;
+  max-width: 800px;
   margin: 30px auto;
   padding: 30px;
 }
@@ -71,7 +71,7 @@ hr {
   display: flex;
   flex-direction: column;
   padding: 10px 30px;
-  max-width: 700px;
+  max-width: 800px;
 }
 
 .enter-city {
@@ -120,9 +120,6 @@ hr {
   color: #255fca;
 }
 
-.phrase {
-  right: 10px;
-}
 .motivational-phrase {
   background-color: #add7eb;
   font-style: italic;
@@ -134,9 +131,6 @@ hr {
   text-align: center;
   line-height: 40px;
   max-width: 400px;
-}
-.motivational-phrase::first-letter {
-  text-transform: capitalize;
 }
 
 .weather-stats {
@@ -158,12 +152,16 @@ hr {
   border-radius: 25px;
   margin: 15px;
   padding: 15px;
+  font-size: 12px;
 }
 #open-source {
   text-decoration-line: none;
 }
 .emoji {
-  font-size: 35px;
+  font-size: 20px;
+}
+.min-temperature {
+  opacity: 0.5;
 }
 footer {
   font-size: 12px;
