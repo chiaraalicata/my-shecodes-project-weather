@@ -44,6 +44,14 @@ let date = now.getDate();
 currentTime.innerHTML = `${day}, ${month} ${date} </br> ${year} </br> 
 ${hours}:${minutes}`;
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 function getForecast(coordinates) {
   let apiKey = "7cf24a2441259043e3f7ca4927b8b80f";
   let apiUrl = `http://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={part}&appid=${apiKey}&units=metric`;
@@ -51,23 +59,28 @@ function getForecast(coordinates) {
 }
 
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#weather-forecast");
-
   let forecastHTML = `<div class="row">`;
-  let daysShort = ["Tue", "Wed", "Thu", "Fri"];
-  daysShort.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `     <div class="col-2 next-weather">
-            ${day} <br />
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 4) {
+      forecastHTML =
+        forecastHTML +
+        `   <div class="col-2 next-weather">
+            ${formatDay(forecastDay.dt)} 
+            <br />
             <hr />
-            <span class="emoji">🌫</span>
+            <img src="http://openweathermap.org/img/wn/${
+              forecastDay.weather[0].icon
+            }@2x.png" alt="" width="42" />
             <hr />
             <span class="max-temperature">
-            17° </span>
-            <span class="min-temperature">11°</span> <br />
+            ${Math.round(forecastDay.temp.max)}° </span>
+            <span class="min-temperature">${Math.round(
+              forecastDay.temp.min
+            )}°</span> <br />
           </div>`;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;

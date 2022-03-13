@@ -29,10 +29,10 @@ h2 {
   background-color: #bbe8e5;
   text-align: right;
   width: 100%;
-  padding-top: 15px;
+  padding-top: 40px;
   padding-right: 10px;
-  margin-top: 30px;
-  max-width: 280px;
+  margin-top: 45px;
+  max-width: 300px;
 }
 hr {
   margin: 1vh;
@@ -50,9 +50,9 @@ hr {
   font-style: italic;
   text-align: center;
   width: 100%;
-  max-width: 220px;
-  border-radius: 90%;
-  padding: 30px 30px;
+  max-width: 250px;
+  border-radius: 50%;
+  padding: 20px 20px;
   margin-top: 30px;
   text-transform: capitalize;
 }
