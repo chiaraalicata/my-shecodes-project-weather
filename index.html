@@ -17,10 +17,10 @@
   </head>
   <body>
     <div class="container">
-      <div class="app-box">
-        <form id="search-form" class="mb-5">
+      <div class="app-ctn">
+        <form id="search-form" class="mb-5 mt-3">
           <div class="row">
-           <div class="col-9">
+           <div class="col-6">
             <input
             type="search"
             class="enter-city"
@@ -35,6 +35,13 @@
              value= "Search"
              class= "btn btn-primary w-100"
              id="search-city">
+            </div>
+            <div class="col-3">
+            <button type="button"
+             class="btn btn-primary w-100" 
+             id="current-location"> 
+             Current
+            </button>
             </div>
         </div>
         </form>
@@ -60,20 +67,19 @@
           <div class="col-4">
             <p class="current-time-and-day">
               <span id="day-and-time">Monday 10:43</span>
-              <br />
-              <span id="description-weather">Mostly Cloudy</span>
             </p>
           </div>
           <div class="row">
             <div class="col-6">
               <ul>
-                <li class="weather-stats">Precipitation: <span id="precipitation">0</span>%</li>
+                <li class="weather-stats"><span id="feels-like">0</span></li>
+                <li class="weather-stats" id="description-weather">Mostly Cloudy</li>
                 <li class="weather-stats">Humidity: <span id="humidity">20</span>%</li>
-                <li class="weather-stats">Wind: <span id="wind"></span>Km/H</li>
+                <li class="weather-stats">Wind: <span id="wind"></span>m/H</li>
               </ul>
             </div>
             <div class="col-6">
-              <p class="motivational-phrase">
+              <p id="funny-phrase">
                 "Today is the perfect day to take a walk outside 🌻"
               </p>
             </div>
@@ -98,9 +104,9 @@
         </a>
       </footer>
   </body>
-  <script
-    src="https://kit.fontawesome.com/9f8e329054.js"
-    crossorigin="anonymous"
-  ></script>
+  <script 
+  src="https://kit.fontawesome.com/9f8e329054.js" 
+  crossorigin="anonymous">
+  </script>
   <script src="src/script.js"></script>
 </html>

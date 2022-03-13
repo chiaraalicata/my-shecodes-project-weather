@@ -31,7 +31,8 @@ h2 {
   width: 100%;
   padding-top: 40px;
   padding-right: 10px;
-  margin-top: 45px;
+  margin-top: 25px;
+  margin-bottom: 20px;
   max-width: 300px;
 }
 hr {
@@ -67,7 +68,7 @@ hr {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
-.app-box {
+.app-ctn {
   display: flex;
   flex-direction: column;
   padding: 10px 30px;
@@ -97,11 +98,15 @@ hr {
   color: #ade4e0;
 }
 #current-location {
+  color: white;
   background-color: #42a5f5;
   border-radius: 25px;
   transition: all 200ms ease-in-out;
   border: none;
   margin: 10px;
+}
+#description-weather::first-letter {
+  text-transform: capitalize;
 }
 #current-location:hover {
   background-color: #3a94dd;
@@ -120,7 +125,7 @@ hr {
   color: #255fca;
 }
 
-.motivational-phrase {
+#funny-phrase {
   background-color: #add7eb;
   font-style: italic;
   color: #1d4ba1;
@@ -143,7 +148,6 @@ hr {
   list-style: none;
   line-height: 50px;
   margin: 10px;
-  text-transform: capitalize;
 }
 
 .next-weather {
