@@ -102,10 +102,10 @@ function changeFunnyPhrase(phrase) {
   if (phrase === "shower rain" || phrase === "rain") {
     return "It's time for 💃🏽 in the 🌧, but don't forget your ☂️";
   }
-  if (phrase === "thunderstorm") {
+  if (phrase === "thunderstorm" || phrase === "heavy snow") {
     return "Maybe it's better to stay 🏠. Read a 📖 and enjoy a cup of hot 🍵";
   }
-  if (phrase === "snow" || phrase === "light snow" || phrase === "heavy snow") {
+  if (phrase === "snow" || phrase === "light snow") {
     return "Do you want to built a ☃️?";
   }
 }
