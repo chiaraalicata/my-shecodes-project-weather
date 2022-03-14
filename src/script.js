@@ -104,7 +104,7 @@ function changeFunnyPhrase(phrase) {
   if (phrase === "thunderstorm") {
     return "Maybe it's better to stay 🏠. Read a 📖 and enjoy a cup of hot 🍵";
   }
-  if (phrase === "snow") {
+  if (phrase === "snow" || phrase === "light snow") {
     return "Do you want to built a ☃️?";
   }
 }
