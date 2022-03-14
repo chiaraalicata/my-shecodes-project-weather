@@ -94,7 +94,8 @@ function changeFunnyPhrase(phrase) {
   if (
     phrase === "broken clouds" ||
     phrase === "mist" ||
-    phrase === "overcast clouds"
+    phrase === "overcast clouds" ||
+    phrase === "haze"
   ) {
     return `You can't make a cloudy day a sunny day, but can embrace it and decide it's going to be a good day after all. ☁️🌈`;
   }
