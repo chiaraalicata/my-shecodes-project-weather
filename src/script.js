@@ -85,13 +85,20 @@ function displayForecast(response) {
 // integration of real data API
 function changeFunnyPhrase(phrase) {
   if (
-    phrase === "clear" &&
-    phrase === "few clouds" &&
+    phrase === "clear sky" ||
+    phrase === "few clouds" ||
     phrase === "scattered clouds"
   ) {
     return "Today is the perfect day to take a walk outside 🌻";
   }
-  if (phrase === "broken clouds" && phrase === "drizzle" && phrase === "Rain") {
+  if (
+    phrase === "broken clouds" ||
+    phrase === "mist" ||
+    phrase === "overcast clouds"
+  ) {
+    return `You can't make a cloudy day a sunny day, but can embrace it and decide it's going to be a good day after all. ☁️🌈`;
+  }
+  if (phrase === "shower rain" || phrase === "rain") {
     return "It's time for 💃🏽 in the 🌧, but don't forget your ☂️";
   }
   if (phrase === "thunderstorm") {
@@ -101,6 +108,7 @@ function changeFunnyPhrase(phrase) {
     return "Do you want to built a ☃️?";
   }
 }
+
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#actual-temperature");
   let cityElement = document.querySelector("#city");

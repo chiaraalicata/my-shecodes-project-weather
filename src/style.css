@@ -1,12 +1,12 @@
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   max-width: 600px;
   margin: 30px auto;
   padding: 30px;
 }
-
 h1 {
   background-color: #bbe8e5;
   text-align: center;
